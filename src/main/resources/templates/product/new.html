@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <form th:action="@{/product/new}" th:object="${product}" method="post">
+        <fieldset>
+            <legend>Product Registration Form</legend>
+            <input type="hidden" th:value="${product.productId}" name="productId">
+
+            <div class="form-group">
+                <label for="customerName">Product Name</label>
+                <input type="text" class="form-control" id="customerName" th:value="${product.productId}" name="supplierName">
+            </div>
+
+            <div class="form-group">
+                <label for="Address">Address</label>
+                <input type="text" class="form-control" id="Address" name="Address" th:value="${customer.Address}">
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-warning">Cancel</a>
+                <button class="btn btn-outline-success" type="submit">Save</button>
+
+            </div>
+
+        </fieldset>
+    </form>
+
+
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>

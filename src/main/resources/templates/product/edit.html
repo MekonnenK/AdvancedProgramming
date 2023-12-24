@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master/masterlayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <form th:action="@{/product/edit}" method="post" th:object="${product}">
+        <fieldset>
+            <legend>Supplier Editiion form</legend>
+            <input type="hidden" name="productId" th:value="${product.productId}">
+
+            <div class="form-group">
+                <label for="productName"> Product Name</label>
+                <input type="text" class="form-control" id="productName" name="productName"
+                       th:value="${product.productName}">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" name="price"
+                       th:value="${product.price}">
+            </div>
+
+            <div class="form-group">
+                <label for="quantityInStock"> Quantity In Stock</label>
+                <input type="text" class="form-control" id="quantityInStock" name="quantityInStock"
+                       th:value="${product.quantityInStock}">
+            </div>
+            <div>
+                <a th:href="@{/product/list}" class="btn btn-outline-success">Cancel</a>
+                <button type="submit" class="btn btn-outline-success">Save</button>
+            </div>
+        </fieldset>
+    </form>
+
+</th:block>
+
+<th:block layout:fragment="footer"></th:block>
+
+</body>
+</html>
