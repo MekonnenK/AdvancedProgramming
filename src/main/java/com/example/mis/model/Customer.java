@@ -52,18 +52,18 @@ public class Customer {
 
     public static void main(String[] args) {
 
-        // Create a Product object with initial values
-        Customer customer = new Customer("", "");
+        // Create a customer object with initial values
+        Customer customer = new Customer("MESFIN", "Mekelle");
 
-        // Use getter methods to retrieve product information
+        // Use getter methods to retrieve customer information
         System.out.println("Customer Name: " + customer.getCustomerName());
         System.out.println("Address: $" + customer.getAddress());
 
-        // Use setter methods to update product information
-        customer.setCustomerName("");
-        customer.setAddress("");
+        // Use setter methods to update customer information
+        customer.setCustomerName("MESFIN");
+        customer.setAddress("Adigrat");
 
-        // Display updated product information
+        // Display updated customer information
         System.out.println("\nUpdated Customer Information:");
         System.out.println("Customer Name: " + customer.getCustomerName());
         System.out.println("Address: $" + customer.getAddress());
